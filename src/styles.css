@@ -1,0 +1,554 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #14213d;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+}
+
+/* Header */
+
+.header-wrapper {
+  background-color: #6a040f;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.Header a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.Header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Header-left h4 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.Header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.Header-right button {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.Header-searchicon {
+  width: 16px;
+}
+
+.Header-filmicon {
+  width: 48px;
+  border-radius: 50px;
+}
+
+.Header-filmicon:hover {
+  cursor: pointer;
+}
+
+.Header button {
+  display: flex;
+  border: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.5s;
+}
+
+.Header button:hover {
+  cursor: pointer;
+}
+
+.Header a {
+  transition: all 0.5s;
+}
+
+.Header a:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.Header h4 {
+  color: orangered;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+}
+
+.Header h4:hover {
+  cursor: pointer;
+}
+
+.Header-right-search {
+  padding: 6px 16px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  border-radius: 50px;
+  display: flex;
+}
+
+.Header-right-search input {
+  background-color: none;
+  border: none;
+  flex-grow: 1;
+}
+
+.Header-right-search input:focus {
+  outline: none;
+}
+
+/* Hero */
+
+.Hero {
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: #7f7f7f;
+  background-blend-mode: multiply;
+  position: relative;
+}
+
+.Hero-navSearch {
+  position: absolute;
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  margin-left: 16px;
+}
+
+.Hero-navSearch form{
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #001a2c;
+  border-radius: 50px;
+}
+
+.Hero-navSearch input {
+  flex-grow: 1;
+  border: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 12px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #001a2c;
+  margin-top: 4px;
+  color: #ade8f4;
+  
+}
+
+.Hero-navSearchBtn {
+  font-size: 18px;
+  padding: 12px 16px;
+  color: white;
+  font-weight: 500;
+  background-color: #001a2c;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.Hero-navSearchBtn:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.Hero-navSearch input::placeholder {
+  color: #ade8f4;
+}
+
+.Hero-navSearch input:focus {
+  outline: none;
+}
+
+.Hero-title h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 80px;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.Hero-title h4 {
+  color: white;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.Hero-title {
+  margin-bottom: 18px;
+}
+
+.Hero-input-wrapper {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 6px 8px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.Hero-input-wrapper input {
+  border: none;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  flex-grow: 1;
+  border-radius: 25px;
+  margin-left: 6px;
+}
+
+.Hero-input-wrapper input:focus {
+  outline: none;
+  background-color: white;
+}
+
+.form {
+  display: flex;
+  max-width: 450px;
+  width: 100%;
+}
+
+.form:focus {
+  background-color: white;
+}
+
+.Hero-input-wrapper button {
+  background-color: orangered;
+  padding: 8px 48px;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.5s;
+}
+
+.Hero-input-wrapper button:hover {
+  cursor: pointer;
+  background-color: #9d0208;
+}
+
+/* Section Header */
+.Section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 0px;
+}
+
+.Section-wrapper h3 {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 24px;
+}
+
+.SectionHeader-btn-wrapper {
+  display: flex;
+  width: 200px;
+  background-color: white;
+  justify-content: center;
+  border-radius: 25px;
+  padding: 1.5px;
+}
+
+.sectionbtn {
+  font-family: "Montserrat", sans-serif;
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 8px 0px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: all 0.5s;
+}
+
+.sectionbtn-one {
+  background-color: darkorange;
+  color: white;
+}
+
+.sectionbtn:hover {
+  cursor: pointer;
+}
+
+.sectionbtn-one:hover {
+  background-color: #6a040f;
+}
+
+/* Section */
+
+.section-wrapper {
+  padding: 0px 50px;
+  padding-bottom: 50px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.Trending-section,
+.Popular-section,
+.Toprated-section,
+.search-results {
+  font-family: "Montserrat", sans-serif;
+}
+
+.swiper-button-next {
+  color: orangered;
+}
+
+.swiper-button-prev {
+  color: orangered;
+}
+
+
+/* Movie Card */
+
+.MovieCard {
+  padding-bottom: 36px;
+  box-shadow: 1px 1px 5px lightgray;
+  border: 2px solid #7f7f7f;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+ 
+}
+
+.MovieCard-image {
+  width: 100%;
+  max-width: 320px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  transition: all 0.5s;
+}
+
+.MovieCard-image:hover {
+  cursor: pointer;
+  filter: brightness(60%);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.MovieCard-wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.MovieCard-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  font-size: 14px;
+  padding: 12px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 80px;
+}
+
+.MovieCard-text h3 {
+  font-weight: 500;
+}
+
+.MovieCard-text p {
+  font-weight: 300;
+}
+
+.MovieCard-rating {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.star-icon {
+  width: 15px;
+}
+
+.swiper-button-next {
+  color: whitesmoke;
+}
+
+.swiper-button-prev {
+  color: whitesmoke;
+}
+
+/* MoviesPage */
+
+.MoviesPage {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #14213d;
+  font-family: "Montserrat", sans-serif;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.MoviesDisplay {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+}
+
+.GenreSelector {
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.GenreSelector h1 {
+  color: whitesmoke;
+  font-weight: 400;
+  user-select: none;
+}
+
+.movieGenre-selector {
+  padding: 12px 8px;
+  border-radius: 12px;
+  width: 225px;
+  font-size: 16px;
+}
+
+.movieGenre-selector:hover {
+  cursor: pointer;
+}
+
+
+
+/* Footer */
+.footer-wrapper {
+  background-color: black;
+  text-align: center;
+}
+
+.Footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  color: white;
+  padding: 24px 0px;
+  display: flex;
+  gap: 36px;
+  flex-direction: column;
+}
+
+.Footer button {
+  padding: 0;
+  color: white;
+  background-color: black;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  transition: all 0.5s;
+}
+
+.Footer button:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+.footer-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-topbtn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-social-icon {
+  width: 24px;
+}
+
+.footer-social-icon:hover {
+  cursor: pointer;
+}
+
+.footer-social-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer-social-wrapper button {
+  padding: 0;
+}
+
+.footer-social-wrapper button:hover {
+  cursor: pointer;
+}
