@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { SearchContext } from "./SearchContext";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
   const { query, setQuery, navQuery, setnavQuery } = useContext(SearchContext);
@@ -20,9 +20,9 @@ export default function HomePage() {
     search: "movie",
     trending: "day",
     popular: "movie",
-    toprated: "movie"
+    toprated: "movie",
   });
-const [trendingMovies, setTrendingMovies] = useState([]);
+  const [trendingMovies, setTrendingMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
 
@@ -45,21 +45,21 @@ const [trendingMovies, setTrendingMovies] = useState([]);
         ? "darkorange"
         : "white",
     color:
-      activeButton[section] === buttonTitle.toLowerCase() ? "white" : "black"
+      activeButton[section] === buttonTitle.toLowerCase() ? "white" : "black",
   });
 
   const handleActiveButton = useCallback(
     (section, buttonTitle, setTimeWindow) => {
       setActiveButton((prevState) => ({
         ...prevState,
-        [section]: buttonTitle.toLowerCase()
+        [section]: buttonTitle.toLowerCase(),
       }));
       setTimeWindow(buttonTitle.toLowerCase());
 
       localStorage.setItem("lastTimeWindow", buttonTitle.toLowerCase());
       localStorage.setItem("hasSearched", "true");
     },
-    [setActiveButton]
+    [setActiveButton],
   );
 
   useEffect(() => {
@@ -79,7 +79,7 @@ const [trendingMovies, setTrendingMovies] = useState([]);
     const fetchBackgroundImage = async () => {
       try {
         const response = await fetch(
-          "https://api.themoviedb.org/3/movie/popular?api_key=8d87d908f771e658d8db29f94c80440f"
+          "https://api.themoviedb.org/3/movie/popular?api_key=8d87d908f771e658d8db29f94c80440f",
         );
         const data = await response.json();
         const randomIndex = Math.floor(Math.random() * data.results.length);
@@ -88,48 +88,42 @@ const [trendingMovies, setTrendingMovies] = useState([]);
         setBackgroundImage(imageUrl);
       } catch (error) {
         console.error("Error fetching the background image.", error);
-        
       }
     };
 
     fetchBackgroundImage();
   }, []);
 
-
   async function searchMovies1(navQuery, timeWindow) {
     const url = `https://api.themoviedb.org/3/search/${timeWindow}?api_key=8d87d908f771e658d8db29f94c80440f&query=${navQuery}`;
     try {
       const res = await fetch(url);
-    const data = await res.json();
-    console.log(data)
-    return data.results;
-    
+      const data = await res.json();
+      console.log(data);
+      return data.results;
     } catch (error) {
-      console.error('error has occured', error)
+      console.error("error has occured", error);
     }
-   
-    
   }
 
   async function searchMovies2(query) {
     const encodedQuery = encodeURIComponent(query);
     const url = `https://api.themoviedb.org/3/search/movie?api_key=8d87d908f771e658d8db29f94c80440f&query=${encodedQuery}`;
-  
+
     try {
       const res = await fetch(url);
-  
+
       if (!res.ok) {
         throw new Error(`API call failed with status: ${res.status}`);
       }
-  
+
       const data = await res.json();
-  
+
       return data.results || [];
     } catch (error) {
       console.error("Error during the API call:", error);
       return [];
-    } 
-    
+    }
   }
 
   const fetchMovies = async (section, timeWindow) => {
@@ -170,31 +164,26 @@ const [trendingMovies, setTrendingMovies] = useState([]);
 
       fetchData();
     }
-   
   }, [searchTimeWindow]);
 
   useEffect(() => {
     fetchMovies("trending", trendingTimeWindow).then((data) => {
-      console.log(data)
+      console.log(data);
       setTrendingMovies(data);
-      
     });
   }, [trendingTimeWindow]);
 
   useEffect(() => {
     fetchMovies("popular", popularTimeWindow).then((data) => {
-      
       setPopularMovies(data);
     });
   }, [popularTimeWindow]);
 
   useEffect(() => {
     fetchMovies("top-rated", topRatedTimeWindow).then((data) => {
-      
       setTopRatedMovies(data);
     });
   }, [topRatedTimeWindow]);
-
 
   return (
     <div className="App">
@@ -209,22 +198,25 @@ const [trendingMovies, setTrendingMovies] = useState([]);
 
             if (movies.length > 0) {
               setHasSearched(true);
-
             }
           }}
           submit2={async (query) => {
-            console.log('submit2 - query:', query, 'timeWindow:', searchTimeWindow);
+            console.log(
+              "submit2 - query:",
+              query,
+              "timeWindow:",
+              searchTimeWindow,
+            );
             try {
               const movies = await searchMovies2(query);
-              console.log('submit2 - movies:', movies);
+              console.log("submit2 - movies:", movies);
               setMovies(movies);
               if (movies.length > 0) {
                 setHasSearched(true);
               }
             } catch (error) {
-              console.error('submit2 - error:', error);
+              console.error("submit2 - error:", error);
             }
-            
           }}
         />
       </div>
@@ -310,7 +302,6 @@ const [trendingMovies, setTrendingMovies] = useState([]);
                     rating={movie.vote_average}
                   />
                 </SwiperSlide>
-                
               ))}
             </div>
           </Swiper>

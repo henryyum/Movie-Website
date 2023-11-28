@@ -8,14 +8,11 @@ export default function MoviesPage() {
   const [movieQuery, setMovieQuery] = useState([]);
   const [movieGenres, setMovieGenres] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
   const [selectedMovieGenre, setSelectedMovieGenre] = useState("");
-  const {
-    searchIsOpen,
-    handleClick,
-    styles,
-    isLoading,
-    setIsLoading
-  } = useContext(SearchContext);
+  const { searchIsOpen, handleClick, styles, isLoading, setIsLoading } =
+    useContext(SearchContext);
 
   async function getGenreList(url) {
     const res = await fetch(url);
@@ -25,7 +22,7 @@ export default function MoviesPage() {
 
   useEffect(() => {
     getGenreList(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=8d87d908f771e658d8db29f94c80440f"
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=8d87d908f771e658d8db29f94c80440f",
     ).then((data) => {
       setMovieGenres(data);
     });
@@ -42,7 +39,7 @@ export default function MoviesPage() {
 
   useEffect(() => {
     getAllMovies(
-      "https://api.themoviedb.org/3/discover/movie?api_key=8d87d908f771e658d8db29f94c80440f"
+      "https://api.themoviedb.org/3/discover/movie?api_key=8d87d908f771e658d8db29f94c80440f",
     ).then((data) => {
       setAllMovies(data);
       setIsLoading(false);
@@ -83,7 +80,7 @@ export default function MoviesPage() {
   const onSearch = (searchTerm) => {
     const query = encodeURIComponent(searchTerm);
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=8d87d908f771e658d8db29f94c80440f&query=${query}`
+      `https://api.themoviedb.org/3/search/movie?api_key=8d87d908f771e658d8db29f94c80440f&query=${query}`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -139,7 +136,7 @@ export default function MoviesPage() {
               movieRelease={movie.release_date}
               rating={movie.vote_average}
             />
-          )
+          ),
         )}
       </div>
     </div>
